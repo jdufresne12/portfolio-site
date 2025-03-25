@@ -42,7 +42,7 @@ export default function Navbar() {
                     </li>
                     <li>
                         <Link
-                            href="/home"
+                            href="/"
                             style={{ fontFamily: "var(--font-vt323)" }}
                             className="font-serif text-white hover:text-black"
                         >

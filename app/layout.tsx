@@ -33,17 +33,13 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
       <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable}`}>
-        <body className="container antialiased">
+        <body className="antialiased">
+          <Navbar />
           {children}
+          <Footer />
         </body>
       </html>
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 }

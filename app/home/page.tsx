@@ -5,7 +5,7 @@
 
 export default function HomePage() {
     return (
-        <div>
+        <div className="container w-max h-max">
             <h1>HOME PAGE</h1>
         </div>
     )

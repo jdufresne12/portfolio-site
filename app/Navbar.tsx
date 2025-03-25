@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import { FaMicrochip, FaLinkedin, FaGithub } from "react-icons/fa6";
 
 export default function Navbar() {
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [screenWidth, setScreenWidth] = useState(0);
 
     useEffect(() => {
+        setScreenWidth(window.innerWidth);
+
         const handleResize = () => setScreenWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize); // Cleanup
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
@@ -28,12 +30,12 @@ export default function Navbar() {
                         </h1>
                     </div>
                 </div>
-                <ul className="flex space-x-10 mx-auto my-auto">
+                <ul className="flex space-x-10 mx-auto my-auto text-2xl">
                     <li>
                         <Link
                             href="/home"
                             style={{ fontFamily: "var(--font-vt323)" }}
-                            className="font-serif text-2xl text-white hover:text-black"
+                            className="font-serif text-white hover:text-black"
                         >
                             About
                         </Link>
@@ -42,7 +44,7 @@ export default function Navbar() {
                         <Link
                             href="/home"
                             style={{ fontFamily: "var(--font-vt323)" }}
-                            className="font-serif text-2xl text-white hover:text-black"
+                            className="font-serif text-white hover:text-black"
                         >
                             Projects
                         </Link>
@@ -54,7 +56,7 @@ export default function Navbar() {
                                     <Link
                                         href="/home"
                                         style={{ fontFamily: "var(--font-vt323)" }}
-                                        className="font-serif text-2xl text-white hover:text-black"
+                                        className="font-serif text-white hover:text-black"
                                     >
                                         <FaLinkedin size={35} />
                                     </Link>
@@ -63,7 +65,7 @@ export default function Navbar() {
                                     <Link
                                         href="/home"
                                         style={{ fontFamily: "var(--font-vt323)" }}
-                                        className="font-serif text-2xl text-white hover:text-black"
+                                        className="font-serif text-white hover:text-black"
                                     >
                                         <FaGithub size={35} />
                                     </Link>
@@ -72,7 +74,7 @@ export default function Navbar() {
                                     <Link
                                         href="/home"
                                         style={{ fontFamily: "var(--font-vt323)" }}
-                                        className="font-serif text-2xl text-white hover:text-black"
+                                        className="font-serif text-white hover:text-black"
                                     >
                                         Resume
                                     </Link>
@@ -85,7 +87,7 @@ export default function Navbar() {
                                     <Link
                                         href="/home"
                                         style={{ fontFamily: "var(--font-vt323)" }}
-                                        className="font-serif text-2xl text-white hover:text-black"
+                                        className="font-serif text-white hover:text-black"
                                     >
                                         Contact
                                     </Link>

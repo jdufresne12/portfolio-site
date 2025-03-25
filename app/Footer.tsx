@@ -3,15 +3,7 @@ import { useState, useEffect } from "react"
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
-    const [screenWidth, setScreenWidth] = useState(0);
 
-    useEffect(() => {
-        setScreenWidth(window.innerWidth);
-
-        const handleResize = () => setScreenWidth(window.innerWidth);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
     return (
         <footer className="bg-zinc-800 shadow-top text-white py-8">
             <div className="container mx-auto pr-3 md:pr-0">

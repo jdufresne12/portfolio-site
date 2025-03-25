@@ -15,7 +15,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className="bg-zinc-800 shadow-md">
+        <nav className="bg-zinc-800 shadow-md overflow-hidden">
             <div className="container px-4 py-3 flex items-center ">
                 <div className="flex space-x-2 pl-1">
                     <div>
@@ -30,7 +30,7 @@ export default function Navbar() {
                         </h1>
                     </div>
                 </div>
-                <ul className="flex space-x-10 mx-auto my-auto text-2xl">
+                <ul className="flex space-x-10 mx-auto my-auto text-xl md:text-2xl">
                     <li>
                         <Link
                             href="/home"

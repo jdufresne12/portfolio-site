@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { FaMicrochip, FaLinkedin, FaGithub } from "react-icons/fa6";
 
 export default function Navbar() {
-    const [screenWidth, setScreenWidth] = useState(0);
+    const [screenWidth, setScreenWidth] = useState(551);
 
     useEffect(() => {
         setScreenWidth(window.innerWidth);
@@ -54,7 +54,10 @@ export default function Navbar() {
                             <>
                                 <li>
                                     <Link
-                                        href="/home"
+                                        href="https://www.linkedin.com/in/john-dufresne-abb631264/"
+                                        passHref
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         style={{ fontFamily: "var(--font-vt323)" }}
                                         className="font-serif text-white hover:text-black"
                                     >
@@ -63,7 +66,10 @@ export default function Navbar() {
                                 </li>
                                 <li>
                                     <Link
-                                        href="/home"
+                                        href="https://github.com/jdufresne12"
+                                        passHref
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         style={{ fontFamily: "var(--font-vt323)" }}
                                         className="font-serif text-white hover:text-black"
                                     >

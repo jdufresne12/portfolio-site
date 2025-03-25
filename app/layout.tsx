@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, VT323 } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Navbar";
+import Footer from "./home/Footer";
 
 // Import fonts
 const geistSans = Geist({
@@ -31,11 +32,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable}`}>
-      <body className="antialiased">
+    <>
+      <header>
         <Navbar />
-        {children}
-      </body>
-    </html>
+      </header>
+      <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable}`}>
+        <body className="container antialiased">
+          {children}
+        </body>
+      </html>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }

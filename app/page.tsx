@@ -99,7 +99,7 @@ export default function Home() {
           Go to nextjs.org →
         </a>
         <Link href="/home">
-          <button>HOME PAGE</button>
+          <button style={{ fontFamily: "var(--font-vt323)" }}>HOME PAGE</button>
         </Link>
       </footer>
     </div>

@@ -33,9 +33,9 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-zinc-800 shadow-md overflow-visible relative z-50">
+        <nav className="bg-zinc-800 shadow-2xl overflow-visible relative z-50">
             <div className="container px-4 py-3 flex items-center justify-between">
-                <div className="flex space-x-2 pl-10">
+                <div className="flex space-x-2 pl-4">
                     <Image
                         src="/JD.svg"
                         alt="John Dufresne logo"
@@ -44,7 +44,7 @@ export default function Navbar() {
                         priority
                     />
                 </div>
-                <ul className="flex space-x-6 pr-4 md:text-2xl">
+                <ul className="flex space-x-10 pr-4 md:text-2xl">
                     {screenWidth > 769
                         ? (
                             <>

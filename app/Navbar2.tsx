@@ -9,8 +9,8 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState<Boolean>(false);
     const menuRef = useRef<HTMLDivElement>(null);
 
-    const navOptions = ["About", "Projects", "Skills", "Contact Me"];
-    const sectionIds = ["about", "projects", "skills", "contact"];
+    const navOptions = ["Home", "About", "Projects", "Contact Me"];
+    const sectionIds = ["hero", "about", "projects", "contact"];
 
     const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId);

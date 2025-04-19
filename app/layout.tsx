@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, VT323 } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Navbar";
+import Navbar2 from "./Navbar2";
 import Footer from "./Footer";
 
 // Import fonts
@@ -35,7 +36,7 @@ export default function RootLayout({
     <>
       <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable}`}>
         <body className="antialiased">
-          <Navbar />
+          <Navbar2 />
           {children}
           <Footer />
         </body>

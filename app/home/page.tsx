@@ -7,19 +7,17 @@ import { FaArrowDown } from 'react-icons/fa';
 export default function HomePage() {
     const [activeSection, setActiveSection] = useState('hero');
 
-    // Refs for each section to use with IntersectionObserver
     const heroRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
     const projectsRef = useRef<HTMLDivElement>(null);
     const skillsRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
 
-    // Set up intersection observer to detect when sections come into view
     useEffect(() => {
         const options = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.5, // When element is 50% visible
+            threshold: 0.5,
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -30,7 +28,6 @@ export default function HomePage() {
             });
         }, options);
 
-        // Observe all section refs
         if (heroRef.current) observer.observe(heroRef.current);
         if (aboutRef.current) observer.observe(aboutRef.current);
         if (projectsRef.current) observer.observe(projectsRef.current);
@@ -38,23 +35,23 @@ export default function HomePage() {
         if (contactRef.current) observer.observe(contactRef.current);
 
         return () => {
-            // Clean up observer on component unmount
             observer.disconnect();
         };
     }, []);
 
     return (
         <main className="snap-y snap-mandatory h-screen overflow-y-scroll">
+            {/* Hero Section */}
             <section
                 ref={heroRef}
                 id="hero"
-                className={`relative h-screen w-full snap-start ${activeSection === 'hero' ? 'opacity-100' : 'opacity-0'
-                    } transition-opacity duration-1000`}
+                className={`relative h-screen w-full snap-start 
+                    ${activeSection === 'hero' ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}
             >
                 <div className="absolute inset-0">
                     <Image
                         src="/heroImage.jpg"
-                        alt="Your Name - Portfolio"
+                        alt="John Dufresne - Hero Image"
                         fill
                         className="object-cover object-[center_35%] opacity-25"
                         priority
@@ -85,7 +82,7 @@ export default function HomePage() {
                         />
                     </div>
                     <div
-                        className="flex flex-col items-center mb-8 cursor-pointer"
+                        className="flex flex-col items-center mb-8 cursor-pointer hover:text-yellow-400"
                         onClick={() => {
                             const aboutSection = document.getElementById('about');
                             aboutSection?.scrollIntoView({ behavior: 'smooth' });
@@ -101,34 +98,40 @@ export default function HomePage() {
             <section
                 ref={aboutRef}
                 id="about"
-                className={`h-screen w-full bg-white snap-start flex items-center justify-center ${activeSection === 'about' ? 'opacity-100' : 'opacity-0'
-                    } transition-opacity duration-1000`}
+                className={`h-full w-full flex snap-start items-center justify-center
+                    ${activeSection === 'about' ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}
             >
-                <div className="max-w-4xl mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
-                    <div className="flex flex-col md:flex-row gap-8">
-                        <div className="md:w-1/3">
-                            {/* Optional profile image */}
-                            <div className="rounded-lg overflow-hidden">
-                                <Image
-                                    src="/profile.jpg" // Update with your profile image
-                                    alt="Profile picture"
-                                    width={300}
-                                    height={300}
-                                    className="w-full object-cover"
-                                />
-                            </div>
-                        </div>
-                        <div className="md:w-2/3">
-                            <p className="text-lg mb-4">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <div className="flex max-w-5xl bg-gray-800 items-center justify-center">
+                    {/* Small Screens */}
+                    <div className='md:hidden'>
+
+                    </div>
+
+                    {/* Other Screens */}
+                    <div className='mr-15 w-auto bg-white sm:hidden md:block '> {/* Changed from w-3 to w-auto */}
+                        <Image
+                            src="/heroImage.jpg"
+                            alt="John Dufresne - Hero Image"
+                            width={200} // Add explicit width
+                            height={200} // Add explicit height
+                            className='object-contain' // Removed size-5
+                            priority
+                        />
+                    </div>
+                    <div className="md:w-1/2 lg:w-3/5">
+                        <h2 className="text-4xl font-bold mb-6 text-center md:text-left text-yellow-400">About Me</h2>
+                        <div className="text-white font-serif space-y-4">
+                            <p>
+                                Hey I'm John Dufresne! Growing up in Poughkeepsie, New York, I was always fascinated by building and learning, from disassembling and reassembling things around the house, to fixing cars in my dad's garage.
+                                This hands-on curiosity eventually led me to a programming class in high school, where I discovered a new way to build and problem-solve.
                             </p>
-                            <p className="text-lg">
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt mollit anim id est laborum.
+                            <p>
+                                I went on to study Computer Science at UCF, diving mainly into full-stack development while also exploring cybersecurity and AI. While at UCF, I led a team developing a cross-platform application for U.S.
+                                Army Reservists—managing both frontend and backend systems and implementing CI/CD pipelines to streamline our workflow. This experience reinforced my approach to software: balancing development, automation, and teamwork to build scalable solutions.
+                            </p>
+                            <p>
+                                At my core, I love solving problems, learning new things, and building systems that just work. Whether it's fixing a car, debugging a tricky issue, or architecting a complex application, I'm always up for the challenge.
+                                Currently, I'm seeking a full-stack developer position where I can leverage my technical skills and collaborative approach to create impactful solutions.
                             </p>
                         </div>
                     </div>
@@ -270,7 +273,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-        </main>
+        </main >
     );
 }
 

@@ -3,7 +3,7 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="h-screen w-full flex items-center justify-center transition-opacity duration-1000"
+            className="h-auto w-full flex items-center justify-center"
         >
             <div className="max-w-6xl mx-auto px-4">
                 <h2 className="text-4xl font-bold mb-12 text-center">My Projects</h2>

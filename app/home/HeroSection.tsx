@@ -7,18 +7,18 @@ export default function HeroSection() {
     return (
         <section
             id="hero"
-            className="relative h-screen w-full snap-start transition-opacity duration-1000"
+            className="relative h-screen w-full"
         >
             <div className="absolute inset-0">
                 <Image
                     src="/heroImage.jpg"
                     alt="John Dufresne - Hero Image"
                     fill
-                    className="object-cover object-[center_35%] opacity-25 "
+                    className="object-cover object-[center_35%] opacity-25 z-0"
                     priority
                 />
             </div>
-            <div className="flex flex-col relative h-full z-10 px-4 items-center justify-between text-white shadow-2xl py-20">
+            <div className="flex flex-col relative h-full z-20 px-4 items-center justify-between text-white shadow-2xl py-20">
                 <div></div>
                 <div className="flex flex-col items-center">
                     <h1 className="text-5xl md:text-7xl font-bold mb-4">John Dufresne</h1>
@@ -43,17 +43,16 @@ export default function HeroSection() {
                     />
                 </div>
                 <div
-                    className="flex flex-col items-center mb-8 cursor-pointer hover:text-yellow-400"
+                    className="flex flex-col items-center mb-8 cursor-pointer hover:text-yellow-400 transition-colors duration-300"
                     onClick={() => {
                         const aboutSection = document.getElementById('about');
                         aboutSection?.scrollIntoView({ behavior: 'smooth' });
                     }}
                 >
                     <h3 className="text-md mb-2">learn more about me</h3>
-                    <FaArrowDown size={15} />
+                    <FaArrowDown size={15} className="animate-bounce" />
                 </div>
             </div>
         </section>
     )
-
 }

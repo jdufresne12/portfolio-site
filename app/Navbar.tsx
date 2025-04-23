@@ -47,7 +47,7 @@ export default function Navbar() {
                         onClick={() => scrollToSection("hero")}
                     />
                 </div>
-                <ul className="hidden bg-zinc-800 rounded-full shadow-sm shadow-stone-700 h-fit px-10 py-3 space-x-10 items-center lg:text-xl md:text-xl md:flex">
+                <ul className="hidden bg-zinc-800 rounded-full shadow-sm shadow-stone-700 h-fit lg:ml-30 -ml-8 px-10 py-3 space-x-10 items-center lg:text-xl md:text-xl md:flex">
                     {navOptions.map((option, index) => (
                         <li key={option}>
                             <button

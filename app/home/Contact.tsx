@@ -2,7 +2,7 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="h-auto w-full text-white flex items-center justify-center mt-10"
+            className="h-auto w-full text-white flex items-center justify-center my-20"
         >
             <div className="max-w-4xl mx-auto px-4 z-50">
                 <h2 className="text-4xl font-bold mb-8 text-center">Get In Touch</h2>
@@ -13,11 +13,11 @@ export default function Contact() {
                             <ul className="space-y-4">
                                 <li className="flex items-center">
                                     <span className="w-8 h-8 rounded-full bg-gray-700 mr-3"></span>
-                                    <span>Jdufresne135@gmail.com</span>
+                                    <span>Hopewell Junction, New York</span>
                                 </li>
                                 <li className="flex items-center">
                                     <span className="w-8 h-8 rounded-full bg-gray-700 mr-3"></span>
-                                    <span>Hopewell Junction, New York</span>
+                                    <span>Jdufresne135@gmail.com</span>
                                 </li>
                                 <li className="flex items-center">
                                     <span className="w-8 h-8 rounded-full bg-gray-700 mr-3"></span>

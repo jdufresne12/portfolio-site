@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image";
 import { FaArrowDown } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
@@ -7,18 +6,21 @@ export default function HeroSection() {
     return (
         <section
             id="hero"
-            className="relative h-screen w-full"
+            className="relative h-screen w-full bg-gradient-to-b from-neutral-900 via-neutral-700 to-neutral-900"
         >
+            {/* Hero background image */}
             <div className="absolute inset-0">
                 <Image
                     src="/heroImage.jpg"
                     alt="John Dufresne - Hero Image"
                     fill
-                    className="object-cover object-[center_35%] opacity-25 z-0"
+                    className="object-cover object-[center_35%] opacity-25"
                     priority
                 />
             </div>
-            <div className="flex flex-col relative h-full z-20 px-4 items-center justify-between text-white shadow-2xl py-20">
+
+            {/* Hero content */}
+            <div className="relative flex flex-col h-full px-4 items-center justify-between text-white shadow-2xl py-20">
                 <div></div>
                 <div className="flex flex-col items-center">
                     <h1 className="text-5xl md:text-7xl font-bold mb-4">John Dufresne</h1>

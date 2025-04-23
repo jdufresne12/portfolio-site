@@ -29,46 +29,58 @@ export default function HomePage() {
     }, []);
 
     return (
-        <div className="relative">
-            {/* Fixed position background container */}
-            <div className="fixed inset-0 z-0 bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900">
-                <div className="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
-                    {particles.map((particle, i) => (
-                        <div
-                            key={i}
-                            className="absolute rounded-full bg-yellow-500"
-                            style={{
-                                width: `${particle.size}px`,
-                                height: `${particle.size}px`,
-                                top: `${particle.top}%`,
-                                left: `${particle.left}%`,
-                                animation: `float ${particle.duration}s infinite linear ${particle.delay}s`
-                            }}
-                        />
-                    ))}
-                </div>
+        <main className="relative min-h-screen">
+            {/* Base background */}
+            <div className="fixed inset-0 bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900" />
+
+            {/* Particles layer */}
+            <div
+                className="fixed inset-0 overflow-hidden pointer-events-none"
+                style={{ zIndex: 1 }}
+            >
+                {particles.map((particle, i) => (
+                    <div
+                        key={i}
+                        className="absolute rounded-full bg-yellow-500 opacity-20"
+                        style={{
+                            width: `${particle.size}px`,
+                            height: `${particle.size}px`,
+                            top: `${particle.top}%`,
+                            left: `${particle.left}%`,
+                            animation: `float ${particle.duration}s infinite linear ${particle.delay}s`
+                        }}
+                    />
+                ))}
             </div>
 
-            {/* Content container with proper z-index layering */}
-            <div className="relative z-10">
+            {/* Page content - higher z-index than particles */}
+            <div className="relative" style={{ zIndex: 10 }}>
                 <HeroSection />
-                <div className="relative z-10">
-                    <AboutMe />
-                    <Projects />
-                    <Contact />
-                </div>
+                <AboutMe />
+                <Projects />
+                <Contact />
             </div>
 
-            {/* Define your animation */}
+            {/* Add the animation keyframes via style tag */}
             <style jsx global>{`
                 @keyframes float {
-                    0% { transform: translateY(0) translateX(0); }
-                    25% { transform: translateY(-30px) translateX(15px); }
-                    50% { transform: translateY(-15px) translateX(30px); }
-                    75% { transform: translateY(15px) translateX(15px); }
-                    100% { transform: translateY(0) translateX(0); }
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    25% {
+                        transform: translate(10px, 10px);
+                    }
+                    50% {
+                        transform: translate(0, 20px);
+                    }
+                    75% {
+                        transform: translate(-10px, 10px);
+                    }
+                    100% {
+                        transform: translate(0, 0);
+                    }
                 }
             `}</style>
-        </div>
+        </main>
     );
 }

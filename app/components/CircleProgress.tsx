@@ -19,27 +19,21 @@ const CircleProgress: React.FC<CircleProgressProps> = ({
 
     // Generate array of circle positions
     const circles = Array.from({ length: total }, (_, index) => {
-        // Calculate the angle for this circle in radians
         const angle = (index / total) * 2 * Math.PI;
-
-        // Calculate the radius as 40% of the total size
         const radius = size * 0.4;
 
-        // Calculate x and y coordinates
         const x = radius * Math.sin(angle) + size / 2;
         const y = -radius * Math.cos(angle) + size / 2;
 
-        // Determine if this circle should be active based on the ratio
         const isActive = index < active;
-
         return { x, y, isActive };
     });
 
     // Size of each individual circle
-    const circleSize = size * 0.08;
+    const circleSize = size * 0.1;
 
     return (
-        <div className="relative -mb-10 -mt-7" style={{ width: size, height: size }}>
+        <div className="relative" style={{ width: size, height: size }}>
             {/* Progress label in the center */}
             <div
                 className="absolute inset-0 flex items-center justify-center font-bold text-xs md:text-lg"
@@ -66,7 +60,6 @@ const CircleProgress: React.FC<CircleProgressProps> = ({
                 />
             ))}
 
-            {/* Optional animated ring */}
             <div
                 className="absolute rounded-full border-2 opacity-20"
                 style={{

@@ -185,9 +185,9 @@ export default function SkillsCarousel({
                                     delay: 0.1 * (index % itemsToShow),
                                 }}
                                 className={`flex-shrink-0 bg-gray-800/70 backdrop-blur-lg rounded-xl border border-gray-700 
-      hover:shadow-lg hover:animate-pulse
-      p-3 md:p-6 group transition-all duration-300 
-      cursor-grab active:cursor-grabbing focus:animate-spin`}
+                                    hover:shadow-lg hover:animate-pulse
+                                    p-3 md:p-6 group transition-all duration-300 
+                                    cursor-grab active:cursor-grabbing focus:animate-spin`}
                                 style={{
                                     width: `calc(100% / ${itemsToShow})`,
                                     borderColor: hoverIndex === index ? skill.color : 'rgb(75, 85, 99)',
@@ -198,10 +198,9 @@ export default function SkillsCarousel({
                                     {skill.isOpen === true ? (
                                         <>
                                             <motion.div
-                                                className="w-auto h-auto -p-3 md:-p-6 mb-6 flex items-center justify-center 
-                transition-all duration-300"
+                                                className="w-auto h-auto pt-1 mb-6 flex items-center justify-center transition-all duration-300"
                                                 variants={{
-                                                    hidden: { opacity: 0, y: 50 },
+                                                    hidden: { opacity: 0, y: 100 },
                                                     visible: { opacity: 1, y: 0 },
                                                 }}
                                                 initial="hidden"
@@ -219,20 +218,20 @@ export default function SkillsCarousel({
                                             </motion.div>
 
                                             <motion.div
-                                                className="w-auto h-auto p-2 md:p-6 mb-4 flex items-center justify-center 
-                transition-all duration-300"
+                                                className="w-auto h-auto p-7 md:p-6 -mb-10 -mt-8 flex items-center justify-center transition-all duration-300"
                                                 variants={{
-                                                    hidden: { opacity: 0, y: -50 },
+                                                    hidden: { opacity: 0, y: 100 },
                                                     visible: { opacity: 1, y: 0 },
                                                 }}
                                                 initial="hidden"
                                                 animate="visible"
+
                                                 transition={{
                                                     duration: 0.1,
                                                 }}
                                             >
                                                 <CircleProgress
-                                                    ratio={7 / 10}
+                                                    ratio={skill.rating}
                                                     size={window.innerWidth < 768 ? 50 : 78}
                                                     activeColor={skill.color}
                                                 />
@@ -242,7 +241,7 @@ export default function SkillsCarousel({
                                         <>
                                             <motion.div
                                                 variants={{
-                                                    hidden: { opacity: 0, y: -50 },
+                                                    hidden: { opacity: 0, y: 0 },
                                                     visible: { opacity: 1, y: 0 },
                                                 }}
                                                 initial="hidden"
@@ -250,9 +249,9 @@ export default function SkillsCarousel({
                                                 transition={{
                                                     duration: 0.1,
                                                 }}
-                                                className="w-auto h-auto rounded-full p-2 md:p-6 mb-4 flex items-center justify-center transition-all duration-300"
+                                                className="size-15 rounded-full p-2 md:p-6 mb-4 flex items-center justify-center transition-all duration-300"
                                                 style={{
-                                                    backgroundColor: "rgb(55, 65, 81)" // bg-gray-700
+                                                    backgroundColor: "oklch(44.6% 0.03 256.802 / .7)"
                                                 }}
                                             >
                                                 <div className="transition-all duration-300">
@@ -260,16 +259,8 @@ export default function SkillsCarousel({
                                                 </div>
                                             </motion.div>
 
-                                            <motion.div
-                                                variants={{
-                                                    hidden: { opacity: 0, y: 50 },
-                                                    visible: { opacity: 1, y: 0 },
-                                                }}
-                                                initial="hidden"
-                                                animate="visible"
-                                                transition={{
-                                                    duration: 0.1,
-                                                }}
+                                            <div
+                                                className="w-auto h-auto pt-3 md:-p-6 flex items-center justify-center transition-all duration-300"
                                             >
                                                 <h3
                                                     className="font-medium text-xs md:text-sm transition-all duration-300 line-clamp-1"
@@ -279,7 +270,7 @@ export default function SkillsCarousel({
                                                 >
                                                     {skill.name}
                                                 </h3>
-                                            </motion.div>
+                                            </div>
                                         </>
                                     )}
                                 </div>

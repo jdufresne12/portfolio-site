@@ -1,11 +1,8 @@
 
 export default function Projects() {
     return (
-        <section
-            id="projects"
-            className="h-auto w-full flex items-center justify-center"
-        >
-            <div className="max-w-6xl mx-auto px-4">
+        <section id="skills" className="w-full flex flex-col items-center justify-center mt-40">
+            <div className="max-w-6xl w-full px-4 py-16 z-10">
                 <h2 className="text-4xl font-bold mb-12 text-center">My Projects</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Project cards here... */}

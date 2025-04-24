@@ -4,6 +4,7 @@ import AboutMe from './AboutMe';
 import Projects from './Projects';
 import Contact from './Contact';
 import { useEffect, useState } from 'react';
+import MySkills from './Skills';
 
 interface Particle {
     size: number;
@@ -57,6 +58,7 @@ export default function HomePage() {
             <div className="relative" style={{ zIndex: 10 }}>
                 <HeroSection />
                 <AboutMe />
+                <MySkills />
                 <Projects />
                 <Contact />
             </div>

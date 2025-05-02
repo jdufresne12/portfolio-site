@@ -16,8 +16,8 @@ const AboutSection = () => {
     }, [mainControls, mainInView]);
 
     return (
-        <section id="about" className="min-h-screen w-full flex flex-col items-center justify-center mt-15">
-            <div className="max-w-6xl w-full px-4 py-16 z-10">
+        <section id="about" className="min-h-screen w-full flex flex-col items-center justify-center w">
+            <div className="max-w-6xl w-full px-4 z-10">
                 {/* About Me */}
                 <motion.div
                     ref={mainRef}

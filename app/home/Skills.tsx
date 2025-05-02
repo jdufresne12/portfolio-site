@@ -72,7 +72,7 @@ export default function MySkills() {
 
     return (
         <section id="skills" className="w-full flex flex-col items-center justify-center ">
-            <div className="max-w-6xl w-full px-4 py-16 z-10">
+            <div className="max-w-6xl w-full px-4 z-10">
                 < motion.div
                     ref={skillsRef}
                     variants={{

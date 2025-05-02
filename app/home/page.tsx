@@ -30,11 +30,8 @@ export default function HomePage() {
     }, []);
 
     return (
-        <main className="relative min-h-screen">
-            {/* Base background */}
-            <div className="fixed inset-0 bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900" />
-
-            {/* Particles layer */}
+        <main className="relative min-h-screen">\
+            <div className="fixed inset-0 bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900" />\
             <div
                 className="fixed inset-0 overflow-hidden pointer-events-none"
                 style={{ zIndex: 1 }}
@@ -53,8 +50,6 @@ export default function HomePage() {
                     />
                 ))}
             </div>
-
-            {/* Page content - higher z-index than particles */}
             <div className="relative" style={{ zIndex: 10 }}>
                 <HeroSection />
                 <AboutMe />
@@ -63,7 +58,6 @@ export default function HomePage() {
                 <Contact />
             </div>
 
-            {/* Add the animation keyframes via style tag */}
             <style jsx global>{`
                 @keyframes float {
                     0% {

@@ -9,7 +9,6 @@ import { TbSql } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { VscVscode } from "react-icons/vsc";
 import { RiTailwindCssFill, RiNextjsLine } from "react-icons/ri";
-import Image from "next/image";
 
 
 // Interface for the skill object

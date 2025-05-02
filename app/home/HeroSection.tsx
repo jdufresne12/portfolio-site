@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import { FaArrowDown } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";

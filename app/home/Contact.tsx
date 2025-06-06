@@ -30,29 +30,6 @@ export default function Contact() {
                                 <a href="#" className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center"></a>
                             </div>
                         </div>
-                        <div>
-                            <h3 className="text-xl font-bold mb-4">Send a Message</h3>
-                            <form className="space-y-4">
-                                <input
-                                    type="text"
-                                    placeholder="Your Name"
-                                    className="w-full p-3 bg-gray-700 rounded-lg"
-                                />
-                                <input
-                                    type="email"
-                                    placeholder="Your Email"
-                                    className="w-full p-3 bg-gray-700 rounded-lg"
-                                />
-                                <textarea
-                                    placeholder="Your Message"
-                                    rows={4}
-                                    className="w-full p-3 bg-gray-700 rounded-lg"
-                                ></textarea>
-                                <button className="px-6 py-3 bg-white text-black rounded-lg hover:bg-opacity-90 transition">
-                                    Send Message
-                                </button>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>

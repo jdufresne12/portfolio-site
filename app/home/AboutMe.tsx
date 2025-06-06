@@ -31,7 +31,7 @@ const AboutSection = () => {
                     className="flex flex-col gap-8 items-center bg-gray-800/70 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-2xl md:flex-row"
                 >
                     {/* Image */}
-                    <motion.div
+                    {/* <motion.div
                         variants={{
                             hidden: { x: -30, opacity: 0 },
                             visible: { x: 0, opacity: 1 }
@@ -46,7 +46,7 @@ const AboutSection = () => {
                                 className="w-300 h-48 object-cover rounded-2xl sm:h-80 md:w-64 md:h-110"
                             />
                         </div>
-                    </motion.div>
+                    </motion.div> */}
 
                     {/* About Me - Text */}
                     <motion.div

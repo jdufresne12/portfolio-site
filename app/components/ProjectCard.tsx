@@ -8,22 +8,23 @@ interface props {
 export default function ProjectCard({ project }: props) {
     return (
         <>
-            <div className="flex flex-col bg-white rounded-lg overflow-hidden shadow-lg">
-                <div className="flex h-48 w-auto relative">
+            <div className="flex flex-col bg-white rounded-lg overflow-hidden shadow-lg h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] cursor-pointer">
+                <div className="w-full aspect-[3/2] relative overflow-hidden">
                     <Image
-                        src={'/MercuryCover.png'}
-                        alt="Mercury Cover"
+                        src={project.images}
+                        alt={project.images}
                         fill
-                        className="object-cover object-[center_1%]"
+                        className="object-cover transition-transform duration-300 hover:scale-110"
+                        quality={100}
                         priority
                     />
                 </div>
-                <div className="flex flex-col p-6">
-                    <h3 className="text-xl font-bold text-black">{project.name}</h3>
-                    <p className="text-gray-700">{project.description}</p>
-                    <div className="grid grid-cols-3 md:grid-cols-4 justify-center items-center mr-5 mt-3 space-x-10">
+                <div className="flex flex-col p-6 flex-grow">
+                    <h3 className="text-xl font-bold text-black transition-colors duration-300 hover:text-blue-600">{project.name}</h3>
+                    <p className="text-gray-700 flex-grow">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-3">
                         {project.technologies.map(tech => (
-                            <span key={tech} className="p-2 bg-blue-100 text-blue-800 rounded-full text-xs text-center min-w-14">{tech}</span>
+                            <span key={tech} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs whitespace-nowrap transition-all duration-300 hover:bg-blue-200 hover:scale-105">{tech}</span>
                         ))}
                     </div>
                 </div>

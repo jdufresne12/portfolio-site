@@ -1,3 +1,6 @@
+'use client'
+import React, { useEffect, useRef } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import ProjectCard from "../components/ProjectCard";
 
 export interface ProjectInfo {
@@ -9,6 +12,17 @@ export interface ProjectInfo {
 }
 
 export default function Projects() {
+    const skillsRef = useRef(null);
+    const skillsControls = useAnimation();
+    const skillsInView = useInView(skillsRef, { once: false, amount: 0.1 });
+    useEffect(() => {
+        if (skillsInView) {
+            skillsControls.start("visible");
+        } else {
+            skillsControls.start("hidden");
+        }
+    }, [skillsControls, skillsInView]);
+
     const projects: ProjectInfo[] = [
         {
             id: 1,
@@ -31,18 +45,22 @@ export default function Projects() {
             technologies: ["Java"],
             images: "/ParallelSudoku.png"
         },
-        // {
-        //     id: 4,
-        //     name: "Are you smart than a 5th grader?",
-        //     description: "A mobile trivia application to test users knowledge at a 5th grade level",
-        //     technologies: ["React Native", "Python", "Jenkins", "AWS", "Jest"],
-        //     images: "/ProfileImage.jpg"
-        // }
     ]
 
     return (
-        <section id="projects" className="w-full flex flex-col items-center justify-center mt-40">
-            <div className="max-w-6xl w-full px-4 py-16 z-10">
+        <section id="projects" className="w-full flex flex-col items-center justify-center mt-30">
+            <div className='mt-5' />
+            < motion.div
+                ref={skillsRef}
+                variants={{
+                    hidden: { opacity: 0, y: 75 },
+                    visible: { opacity: 1, y: 0 }
+                }}
+                initial="hidden"
+                animate={skillsControls}
+                transition={{ duration: 1.2 }}
+                className="max-w-6xl w-full px-4 py-16 z-10"
+            >
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold inline-block relative border-b-yellow-400 border-b-2">
                         <span className="text-yellow-400">My </span>
@@ -54,7 +72,7 @@ export default function Projects() {
                         <ProjectCard key={project.id} project={project} />
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </section>
 
     )

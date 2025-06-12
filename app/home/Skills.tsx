@@ -1,8 +1,7 @@
 'use client'
 import { motion, useAnimation, useInView } from "framer-motion"
 import React, { useEffect, useRef } from 'react';
-import { Code, Terminal, Server, Database, Layout, Github, Figma } from 'lucide-react';
-import SkillsCarousel from "../components/SkillsComponent";
+import { Github, Figma } from 'lucide-react';
 import { FaJava, FaJs, FaPython, FaHtml5, FaCss3, FaReact, FaNodeJs, FaJenkins, FaDocker, FaJira, FaAws } from "react-icons/fa";
 import { SiTypescript, SiCplusplus, SiC, SiExpress, SiFastapi, SiJest, SiAppium, SiMysql, SiMongodb } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
@@ -10,6 +9,7 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { VscVscode } from "react-icons/vsc";
 import { RiTailwindCssFill, RiNextjsLine } from "react-icons/ri";
 
+import SkillsCarousel from "../components/SkillsComponent";
 
 // Interface for the skill object
 export interface SkillObject {
@@ -70,16 +70,13 @@ export default function MySkills() {
     ];
 
     return (
-        <section id="skills" className="w-full flex flex-col items-center justify-center ">
+        <section id="skills" className="w-full flex flex-col items-center justify-center">
             <div className="max-w-6xl w-full px-4 z-10">
                 < motion.div
                     ref={skillsRef}
-                    variants={{
-                        hidden: { opacity: 0, y: 75 },
-                        visible: { opacity: 1, y: 0 }
-                    }}
-                    initial="hidden"
-                    animate={skillsControls}
+                    initial={{ opacity: 0, y: 75 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.8 }}
                     className="mt-16"
                 >

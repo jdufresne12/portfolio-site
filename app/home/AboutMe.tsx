@@ -1,7 +1,8 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import { Terminal, Database } from 'lucide-react';
+import { Terminal, Database, Github, Linkedin } from 'lucide-react';
+import Link from 'next/link';
 
 const AboutSection = () => {
     const mainRef = useRef(null);
@@ -30,24 +31,6 @@ const AboutSection = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="flex flex-col gap-8 items-center bg-gray-800/70 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-2xl md:flex-row"
                 >
-                    {/* Image */}
-                    {/* <motion.div
-                        variants={{
-                            hidden: { x: -30, opacity: 0 },
-                            visible: { x: 0, opacity: 1 }
-                        }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="relative"
-                    >
-                        <div>
-                            <img
-                                src="./ProfileImage.jpg"
-                                alt="John Dufresne - Hero Image"
-                                className="w-300 h-48 object-cover rounded-2xl sm:h-80 md:w-64 md:h-110"
-                            />
-                        </div>
-                    </motion.div> */}
-
                     {/* About Me - Text */}
                     <motion.div
                         variants={{
@@ -72,20 +55,25 @@ const AboutSection = () => {
                             transition={{ duration: 0.8, delay: 0.8 }}
                             className="text-gray-200 space-y-4 text-sm md:text-base lg:text-lg"
                         >
-                            <p className="border-l-4 border-r-4 border-yellow-400 px-4">
-                                I'm John Dufresne, a Full Stack Developer with a Computer Science degree from
+                            <p className="border-l-4 border-r-4 border-yellow-400 px-4 py-2">
+                                I'm John Dufresne, a Frontend-focused Full Stack Developer with a Computer Science degree from
                                 <span className="text-yellow-400 font-bold"> The University of Central Florida</span>.
-                                I blend technical expertise with creative problem-solving to build digital solutions
-                                that are both functional and visually compelling.
+                                I specialize in crafting engaging, responsive user interfaces and seamless user experiences
+                                using modern technologies like React, Next.js, and React Native.
                             </p>
-                            <p className='border-l-4 border-r-4 border-yellow-400 px-4'>
-                                My approach to development spans the entire software lifecycle—from intuitive frontend
-                                interfaces to robust backend systems and streamlined deployment processes. Through team leadership experiences,
-                                I've learned to transform complex requirements into technical roadmaps that deliver exceptional results.
+
+                            <p className="border-l-4 border-r-4 border-yellow-400 px-4 py-2">
+                                My passion lies in transforming complex ideas into intuitive, visually compelling applications
+                                that users love to interact with. While I'm comfortable working across the full stack—from
+                                database design and API development to deployment automation—my expertise shines brightest in frontend development,
+                                where I focus on creating pixel-perfect interfaces, smooth animations, and optimized performance.
                             </p>
-                            <p className="border-l-4 border-r-4 border-yellow-400 px-4">
-                                I pride myself on creating applications that stand out through their performance, reliability, and user experience.
-                                My background in automation and testing ensures that the systems I build are not only innovative but also dependable at scale.
+
+                            <p className="border-l-4 border-r-4 border-yellow-400 px-4 py-2">
+                                Through my experience building cross-platform applications and leading development teams,
+                                I've mastered the art of translating user needs into clean, maintainable code. My background
+                                in backend systems and DevOps practices gives me a unique perspective on how frontend choices
+                                impact overall system performance and user satisfaction.
                             </p>
                         </motion.div>
 
@@ -96,16 +84,46 @@ const AboutSection = () => {
                                 visible: { opacity: 1, y: 0 }
                             }}
                             transition={{ duration: 0.8, delay: 1 }}
-                            className="mt-8 flex flex-wrap gap-4"
+                            className="mt-8 flex flex-row flex-wrap gap-4"
                         >
-                            <button className="flex items-center gap-2 px-4 py-3 bg-yellow-400 text-xs hover:bg-yellow-500 text-gray-900 font-bold rounded-lg transition-all shadow-lg hover:shadow-yellow-400/20 md:text-lg md:px-6">
+                            <button
+                                className="flex items-center gap-2 px-4 py-3 bg-yellow-400 text-xs hover:bg-yellow-500 text-gray-900 font-bold rounded-lg transition-all shadow-lg hover:shadow-yellow-400/20 md:text-lg md:px-6"
+                                onClick={() => {
+                                    const section = document.getElementById("projects");
+                                    section?.scrollIntoView({ behavior: 'smooth' });
+                                }}
+                            >
                                 <Database size={18} />
                                 View Projects
                             </button>
-                            <button className="flex items-center gap-2 px-4 py-3 bg-transparent text-xs hover:bg-gray-700 text-yellow-400 font-bold rounded-lg transition-all border-2 border-yellow-400 md:text-lg md:px-6">
+                            <Link
+                                className="flex items-center gap-2 px-4 py-3 bg-transparent text-xs hover:bg-gray-700 text-yellow-400 font-bold rounded-lg transition-all border-2 border-yellow-400 md:text-lg md:px-6"
+                                href="/JohnDufresneResume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <Terminal size={18} />
                                 Download Resume
-                            </button>
+                            </Link>
+                            <Link
+                                href="https://github.com/jdufresne12"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-4 py-3 bg-white text-black text-xs font-semibold rounded-lg hover:bg-gray-200 transition-all md:text-lg md:px-6"
+                            >
+                                <Github size={18} />
+                                GitHub
+                            </Link>
+
+                            <Link
+                                href="https://www.linkedin.com/in/john-dufresne-abb631264/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-4 py-3 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700 transition-all md:text-lg md:px-6"
+                            >
+                                <Linkedin size={18} />
+                                LinkedIn
+                            </Link>
                         </motion.div>
                     </motion.div>
                 </motion.div>

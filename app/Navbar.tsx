@@ -6,7 +6,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from 'react';
 
 export default function Navbar() {
-    const [menuOpen, setMenuOpen] = useState<Boolean>(false);
+    const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const menuRef = useRef<HTMLDivElement>(null);
 
     const navOptions = ["About", "Skills", "Projects", "Contact Me"];

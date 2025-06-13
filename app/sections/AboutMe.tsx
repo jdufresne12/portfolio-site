@@ -56,7 +56,7 @@ const AboutSection = () => {
                             className="text-gray-200 space-y-4 text-sm md:text-base lg:text-lg"
                         >
                             <p className="border-l-4 border-r-4 border-yellow-400 px-4 py-2">
-                                I'm John Dufresne, a Frontend-focused Full Stack Developer with a Computer Science degree from
+                                I&apos;m John Dufresne, a Frontend-focused Full Stack Developer with a Computer Science degree from
                                 <span className="text-yellow-400 font-bold"> The University of Central Florida</span>.
                                 I specialize in crafting engaging, responsive user interfaces and seamless user experiences
                                 using modern technologies like React, Next.js, and React Native.
@@ -64,14 +64,14 @@ const AboutSection = () => {
 
                             <p className="border-l-4 border-r-4 border-yellow-400 px-4 py-2">
                                 My passion lies in transforming complex ideas into intuitive, visually compelling applications
-                                that users love to interact with. While I'm comfortable working across the full stack—from
+                                that users love to interact with. While I&apos;m comfortable working across the full stack—from
                                 database design and API development to deployment automation—my expertise shines brightest in frontend development,
                                 where I focus on creating pixel-perfect interfaces, smooth animations, and optimized performance.
                             </p>
 
                             <p className="border-l-4 border-r-4 border-yellow-400 px-4 py-2">
                                 Through my experience building cross-platform applications and leading development teams,
-                                I've mastered the art of translating user needs into clean, maintainable code. My background
+                                I&apos;ve mastered the art of translating user needs into clean, maintainable code. My background
                                 in backend systems and DevOps practices gives me a unique perspective on how frontend choices
                                 impact overall system performance and user satisfaction.
                             </p>

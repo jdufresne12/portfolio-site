@@ -17,18 +17,17 @@ const AboutSection = () => {
     }, [mainControls, mainInView]);
 
     return (
-        <section id="about" className="min-h-screen w-full flex flex-col items-center justify-center w">
-            <div className="max-w-6xl w-full px-4 z-10">
+        <section id="about" className="min-h-screen w-full flex flex-col items-center mt-10">
+            <div className='mt-5' />
+            <div className="max-w-6xl px-4 z-10">
                 {/* About Me */}
                 <motion.div
                     ref={mainRef}
-                    variants={{
-                        hidden: { opacity: 0, y: 75 },
-                        visible: { opacity: 1, y: 0 }
-                    }}
-                    initial="hidden"
+                    initial={{ opacity: 0, y: 75 }}
+                    whileInView={{ opacity: 1, y: 50 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 1.5, delay: 0.2 }}
                     animate={mainControls}
-                    transition={{ duration: 0.8, delay: 0.2 }}
                     className="flex flex-col gap-8 items-center bg-gray-800/70 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-2xl md:flex-row"
                 >
                     {/* About Me - Text */}
@@ -86,8 +85,8 @@ const AboutSection = () => {
                             transition={{ duration: 0.8, delay: 1 }}
                             className="mt-8 flex flex-row flex-wrap gap-4"
                         >
-                            <button
-                                className="flex items-center gap-2 px-4 py-3 bg-yellow-400 text-xs hover:bg-yellow-500 text-gray-900 font-bold rounded-lg transition-all shadow-lg hover:shadow-yellow-400/20 md:text-lg md:px-6"
+                            <a
+                                className="flex items-center gap-2 px-2 py-2 bg-yellow-400 text-xs hover:bg-yellow-500 text-gray-900 font-bold rounded-lg transition-all shadow-lg hover:shadow-yellow-400/20 md:text-lg md:px-6"
                                 onClick={() => {
                                     const section = document.getElementById("projects");
                                     section?.scrollIntoView({ behavior: 'smooth' });
@@ -95,21 +94,21 @@ const AboutSection = () => {
                             >
                                 <Database size={18} />
                                 View Projects
-                            </button>
-                            <Link
-                                className="flex items-center gap-2 px-4 py-3 bg-transparent text-xs hover:bg-gray-700 text-yellow-400 font-bold rounded-lg transition-all border-2 border-yellow-400 md:text-lg md:px-6"
+                            </a>
+                            <a
+                                className="flex items-center gap-2 px-2 py-1 bg-yellow-400 text-xs hover:bg-yellow-500 text-gray-900 font-bold rounded-lg transition-all shadow-lg hover:shadow-yellow-400/20 md:text-lg md:px-6"
                                 href="/JohnDufresneResume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 <Terminal size={18} />
                                 Download Resume
-                            </Link>
+                            </a>
                             <Link
                                 href="https://github.com/jdufresne12"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-3 bg-white text-black text-xs font-semibold rounded-lg hover:bg-gray-200 transition-all md:text-lg md:px-6"
+                                className="flex items-center gap-2 px-2 py-2 bg-white text-black text-xs font-semibold rounded-lg hover:bg-gray-200 transition-all md:text-lg md:px-6"
                             >
                                 <Github size={18} />
                                 GitHub
@@ -119,7 +118,7 @@ const AboutSection = () => {
                                 href="https://www.linkedin.com/in/john-dufresne-abb631264/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-3 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700 transition-all md:text-lg md:px-6"
+                                className="flex items-center gap-2 px-2 py-2 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700 transition-all md:text-lg md:px-6"
                             >
                                 <Linkedin size={18} />
                                 LinkedIn

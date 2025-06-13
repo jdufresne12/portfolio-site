@@ -37,7 +37,7 @@ export default function Projects() {
     ]
 
     return (
-        <section id="projects" className="w-full flex flex-col items-center justify-center mt-30">
+        <section id="projects" className="w-full flex flex-col items-center justify-center mt-10 md:mt-20">
             < motion.div
                 initial={{ opacity: 0, y: 75 }}
                 whileInView={{ opacity: 1, y: 65 }}
@@ -46,12 +46,12 @@ export default function Projects() {
                 className="max-w-6xl w-full px-4 py-16 z-10"
             >
                 <div className="text-center mb-8">
-                    <h2 className="text-3xl font-bold inline-block relative border-b-yellow-400 border-b-2">
+                    <h2 className="text-3xl font-bold text-white inline-block relative border-b-yellow-400 border-b-2">
                         <span className="text-yellow-400">My </span>
                         Projects
                     </h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-10">
+                <div className="grid grid-cols-1 pt-3 gap-8 md:grid-cols-2 md:pt-10">
                     {projects.map((project: ProjectInfo) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}

@@ -8,6 +8,8 @@ import { Fragment } from 'react';
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const menuRef = useRef<HTMLDivElement>(null);
+    const [showNav, setShowNav] = useState<boolean>(true);
+    let lastScrollY = useRef<number>(0);
 
     const navOptions = ["About", "Skills", "Projects", "Contact Me"];
     const sectionIds = ["about", "skills", "projects", "contact"];
@@ -17,6 +19,19 @@ export default function Navbar() {
         section?.scrollIntoView({ behavior: 'smooth' });
         setMenuOpen(false);
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY.current)
+                setShowNav(false);
+            else
+                setShowNav(true);
+
+            lastScrollY.current = window.scrollY;
+        }
+        window.addEventListener('scroll', handleScroll)
+    }, [])
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
@@ -34,7 +49,7 @@ export default function Navbar() {
     }, [menuOpen])
 
     return (
-        <nav className="fixed top-5 left-13 z-50 w-full ">
+        <nav className={`fixed top-5 left-10 z-50 w-full ${showNav ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}>
             <div className="flex items-center justify-between ">
                 <div >
                     <Image

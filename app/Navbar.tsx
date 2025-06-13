@@ -9,7 +9,7 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const [showNav, setShowNav] = useState<boolean>(true);
-    let lastScrollY = useRef<number>(0);
+    const lastScrollY = useRef<number>(0);
 
     const navOptions = ["About", "Skills", "Projects", "Contact Me"];
     const sectionIds = ["about", "skills", "projects", "contact"];

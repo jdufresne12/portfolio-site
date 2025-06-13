@@ -4,16 +4,16 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="h-auto text-white flex items-center justify-center my-20"
+            className="h-auto w-full text-white flex items-center justify-center my-20"
         >
             <div className="w-fit mx-auto px-4 z-50">
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold inline-block relative border-b-yellow-400 border-b-2">
-                        <span className="text-yellow-400">Get </span>
-                        In Touch
+                        Get
+                        <span className="text-yellow-400"> In Touch</span>
                     </h2>
                 </div>
-                <div className="bg-gray-800 p-8 rounded-4xl">
+                <div className="min-w-100 bg-gray-800 p-8 rounded-4xl">
                     <div className="flex justify-center">
                         <div className="flex flex-col items-center text-center">
                             <ul className="space-y-4">

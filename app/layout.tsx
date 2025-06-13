@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, VT323 } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Navbar";
-import Navbar2 from "./Navbar2";
 import Footer from "./Footer";
 
 // Import fonts
@@ -23,7 +22,7 @@ const vt323 = VT323({
 })
 
 export const metadata: Metadata = {
-  title: "John Dufresne - Developer Portfolio",
+  title: "John Dufresne - My Developer Portfolio",
   description: "Full Stack Developer portfolio showcasing projects and skills",
 };
 

@@ -1,6 +1,6 @@
 'use client'
-import React, { useEffect, useRef } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import ProjectCard from "../components/ProjectCard";
 
 export interface ProjectInfo {
@@ -12,17 +12,6 @@ export interface ProjectInfo {
 }
 
 export default function Projects() {
-    const skillsRef = useRef(null);
-    const skillsControls = useAnimation();
-    const skillsInView = useInView(skillsRef, { once: false, amount: 0.1 });
-    useEffect(() => {
-        if (skillsInView) {
-            skillsControls.start("visible");
-        } else {
-            skillsControls.start("hidden");
-        }
-    }, [skillsControls, skillsInView]);
-
     const projects: ProjectInfo[] = [
         {
             id: 1,
@@ -49,16 +38,11 @@ export default function Projects() {
 
     return (
         <section id="projects" className="w-full flex flex-col items-center justify-center mt-30">
-            <div className='mt-5' />
             < motion.div
-                ref={skillsRef}
-                variants={{
-                    hidden: { opacity: 0, y: 75 },
-                    visible: { opacity: 1, y: 0 }
-                }}
-                initial="hidden"
-                animate={skillsControls}
-                transition={{ duration: 1.2 }}
+                initial={{ opacity: 0, y: 75 }}
+                whileInView={{ opacity: 1, y: 65 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 1.5, delay: 0.2 }}
                 className="max-w-6xl w-full px-4 py-16 z-10"
             >
                 <div className="text-center mb-8">

@@ -1,4 +1,4 @@
-import { ProjectInfo } from "../home/Projects"
+import { ProjectInfo } from "../sections/Projects"
 import Image from "next/image";
 
 interface props {

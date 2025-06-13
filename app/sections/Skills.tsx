@@ -1,6 +1,6 @@
 'use client'
-import { motion, useAnimation, useInView } from "framer-motion"
-import React, { useEffect, useRef } from 'react';
+import { motion } from "framer-motion"
+import React from 'react';
 import { Github, Figma } from 'lucide-react';
 import { FaJava, FaJs, FaPython, FaHtml5, FaCss3, FaReact, FaNodeJs, FaJenkins, FaDocker, FaJira, FaAws } from "react-icons/fa";
 import { SiTypescript, SiCplusplus, SiC, SiExpress, SiFastapi, SiJest, SiAppium, SiMysql, SiMongodb } from "react-icons/si";
@@ -21,17 +21,6 @@ export interface SkillObject {
 }
 
 export default function MySkills() {
-    const skillsRef = useRef(null);
-    const skillsControls = useAnimation();
-    const skillsInView = useInView(skillsRef, { once: false, amount: 0.1 });
-    useEffect(() => {
-        if (skillsInView) {
-            skillsControls.start("visible");
-        } else {
-            skillsControls.start("hidden");
-        }
-    }, [skillsControls, skillsInView]);
-
     const languages: SkillObject[] = [
         { name: 'Java', icon: <FaJava size={28} color="oklch(58.8% 0.158 241.966)" />, color: "oklch(58.8% 0.158 241.966)", isOpen: false, rating: 8 / 10 },
         { name: 'JavaScript', icon: <FaJs size={28} color="oklch(90.5% 0.182 98.111)" />, color: "oklch(90.5% 0.182 98.111)", isOpen: false, rating: 8 / 10 },
@@ -73,11 +62,10 @@ export default function MySkills() {
         <section id="skills" className="w-full flex flex-col items-center justify-center">
             <div className="max-w-6xl w-full px-4 z-10">
                 < motion.div
-                    ref={skillsRef}
                     initial={{ opacity: 0, y: 75 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 50 }}
                     viewport={{ once: false, amount: 0.2 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 1.5, delay: 0.2 }}
                     className="mt-16"
                 >
                     <div className="text-center mb-8">

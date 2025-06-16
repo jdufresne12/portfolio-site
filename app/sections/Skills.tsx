@@ -59,7 +59,8 @@ export default function MySkills() {
     ];
 
     return (
-        <section id="skills" className="w-full flex flex-col items-center mt-10 md:-mt-30">
+        <section id="skills" className="w-full flex flex-col items-center mt-30">
+            <div className='mt-8' />
             <div className="max-w-6xl w-full px-4 z-10">
                 < motion.div
                     initial={{ opacity: 0, y: 75 }}

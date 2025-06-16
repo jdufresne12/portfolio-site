@@ -11,7 +11,7 @@ export default function Navbar() {
     const [showNav, setShowNav] = useState<boolean>(true);
     const lastScrollY = useRef<number>(0);
 
-    const navOptions = ["About", "Skills", "Projects", "Contact Me"];
+    const navOptions = ["About", "Skills", "Projects", "Contact"];
     const sectionIds = ["about", "skills", "projects", "contact"];
 
     const scrollToSection = (sectionId: string) => {

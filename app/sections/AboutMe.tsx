@@ -17,7 +17,7 @@ const AboutSection = () => {
     }, [mainControls, mainInView]);
 
     return (
-        <section id="about" className="min-h-screen w-full flex flex-col items-center mt-10">
+        <section id="about" className=" w-full flex flex-col items-center mt-10">
             <div className='mt-5' />
             <div className="max-w-6xl px-4 z-10">
                 {/* About Me */}

@@ -37,7 +37,7 @@ export default function Projects() {
     ]
 
     return (
-        <section id="projects" className="w-full flex flex-col items-center justify-center mt-10 md:mt-20">
+        <section id="projects" className="w-full flex flex-col items-center mt-10 md:mt-20">
             < motion.div
                 initial={{ opacity: 0, y: 75 }}
                 whileInView={{ opacity: 1, y: 65 }}

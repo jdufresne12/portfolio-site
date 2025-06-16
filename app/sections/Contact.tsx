@@ -6,6 +6,7 @@ export default function Contact() {
             id="contact"
             className="h-auto w-full text-white flex items-center justify-center my-20"
         >
+            <div className='mt-5' />
             <div className="w-fit mx-auto px-4 z-50">
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold inline-block relative border-b-yellow-400 border-b-2">

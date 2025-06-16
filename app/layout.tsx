@@ -24,7 +24,6 @@ const vt323 = VT323({
 export const metadata: Metadata = {
   title: "John Dufresne - My Developer Portfolio",
   description: "Full Stack Developer portfolio showcasing projects and skills",
-  themeColor: "#000000"
 };
 
 export const viewport = {

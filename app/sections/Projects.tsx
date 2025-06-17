@@ -9,6 +9,8 @@ export interface ProjectInfo {
     description: string;
     technologies: string[];
     images: string;
+    github?: string;
+    link?: string;
 }
 
 export default function Projects() {
@@ -18,27 +20,29 @@ export default function Projects() {
             name: "Army Reserve Mercury",
             description: "A Web and Mobile application dedicated to making the daily lives of Army Reservists easier, by handling tedious administrative tasks digitally and providing a dashboard for these administrative tasks and upcoming events.",
             technologies: ["React", "React Native", "Javascript", "Python", "Jenkins", "AWS", "Jest", "PostgreSQL"],
-            images: "/MercuryLogin.png"
+            images: "/MercuryLogin.png",
         },
         {
             id: 2,
             name: "Budget Buddy",
             description: "A mobile personal finance application. Features customizable budget sections and items that track individual transactions, enabling users to gain meaningful insights into their spending habits.",
             technologies: ["React Native", "Typescript", "Python", "FastAPI", "PostgreSQL", "JWT"],
-            images: "/BudgetBuddy.png"
+            images: "/BudgetBuddy.png",
+            github: "https://github.com/jdufresne12/BudgetBuddy",
         },
         {
             id: 3,
             name: "Parallel Sudoku Solver",
             description: "A Java-based application that leverages parallel processing to solve Sudoku puzzles more efficiently using the ForkJoinPool framework and concurrent programming principles ",
             technologies: ["Java"],
-            images: "/ParallelSudoku.png"
+            images: "/ParallelSudoku.png",
+            github: "https://github.com/abzium/parallel-sudoku"
         },
     ]
 
     return (
         <section id="projects" className="w-full flex flex-col items-center mt-10 md:mt-20">
-            < motion.div
+            <motion.div
                 initial={{ opacity: 0, y: 75 }}
                 whileInView={{ opacity: 1, y: 65 }}
                 viewport={{ once: false, amount: 0.2 }}

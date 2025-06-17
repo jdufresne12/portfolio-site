@@ -38,11 +38,11 @@ export default function Contact() {
                                 </li>
                             </ul>
                             <div className="mt-8 flex gap-4">
-                                <a href="https://github.com/jdufresne12" target="_blank" rel="noopener noreferrer">
+                                <a href="https://github.com/jdufresne12" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-115 cursor-pointer">
                                     <FaGithub size={30} className="text-white hover:text-gray-400 transition" />
                                 </a>
-                                <a href="https://www.linkedin.com/in/john-dufresne-abb631264/" target="_blank" rel="noopener noreferrer">
-                                    <FaLinkedin size={30} className="text-blue-500 hover:text-blue-700 transition" />
+                                <a href="https://www.linkedin.com/in/john-dufresne-abb631264/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-115 cursor-pointer">
+                                    <FaLinkedin size={30} className="text-[#0077B5] hover:text-blue-400 transition" />
                                 </a>
                             </div>
                         </div>

@@ -57,7 +57,7 @@ export default function Navbar() {
                         alt="John Dufresne logo"
                         width={0}
                         height={0}
-                        className="size-12 md:size-15"
+                        className="size-12 md:size-15 transition-all duration-300 hover:scale-110 cursor-pointer"
                         priority
                         onClick={() => scrollToSection("hero")}
                     />
@@ -68,7 +68,7 @@ export default function Navbar() {
                             <button
                                 onClick={() => scrollToSection(sectionIds[index])}
                                 style={{ fontFamily: "var(--font-vt323)" }}
-                                className="font-serif text-white hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
+                                className="font-serif text-white  transition-all duration-300 hover:text-yellow-400 hover:scale-95 cursor-pointer"
                             >
                                 {option}
                             </button>

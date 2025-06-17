@@ -73,7 +73,7 @@ export default function SkillsCarousel({
         if (!isDragging) return;
         e.preventDefault();
         const x = e.pageX - (carouselRef.current?.offsetLeft || 0);
-        const walk = (x - startX) * 2; // Scroll speed multiplier
+        const walk = (x - startX); // Scroll speed multiplier
         if (carouselRef.current) {
             carouselRef.current.scrollLeft = scrollLeft - walk;
         }
@@ -186,7 +186,7 @@ export default function SkillsCarousel({
                                 }}
                                 className={`flex-shrink-0 bg-gray-800/70 backdrop-blur-lg rounded-xl border border-gray-700 
                                     hover:shadow-lg hover:animate-pulse
-                                    p-3 md:p-6 group transition-all duration-300 
+                                    p-3 md:p-6 group transition-all duration-300 hover:scale-90
                                     cursor-grab active:cursor-grabbing focus:animate-spin`}
                                 style={{
                                     width: `calc(100% / ${itemsToShow})`,

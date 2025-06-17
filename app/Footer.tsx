@@ -21,7 +21,7 @@ export default function Footer() {
                                 <button
                                     onClick={() => scrollToSection(sectionIds[index])}
                                     style={{ fontFamily: "var(--font-vt323)" }}
-                                    className="font-serif text-white hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
+                                    className="font-serif text-white transition-all duration-300 hover:text-yellow-400 hover:scale-90 cursor-pointer"
                                 >
                                     {option}
                                 </button>

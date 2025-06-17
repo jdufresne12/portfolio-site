@@ -1,7 +1,8 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import { Terminal, Database, Github, Linkedin } from 'lucide-react';
+import { Terminal, Database } from 'lucide-react';
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from 'next/link';
 
 const AboutSection = () => {
@@ -83,10 +84,12 @@ const AboutSection = () => {
                                 visible: { opacity: 1, y: 0 }
                             }}
                             transition={{ duration: 0.8, delay: 1 }}
-                            className="mt-8 flex flex-row flex-wrap gap-4"
+                            className="mt-8 flex flex-row flex-wrap gap-4 "
                         >
                             <a
-                                className="flex items-center gap-2 px-2 py-2 bg-yellow-400 text-xs hover:bg-yellow-500 text-gray-900 font-bold rounded-lg transition-all shadow-lg hover:shadow-yellow-400/20 md:text-lg md:px-6"
+                                className="flex items-center gap-2 px-2 py-2 bg-yellow-400 text-xs text-gray-900 font-bold 
+                                    rounded-lg shadow-lg hover:bg-yellow-500 hover:shadow-yellow-400/20 md:text-lg md:px-6
+                                    transition-all duration-300 hover:scale-105"
                                 onClick={() => {
                                     const section = document.getElementById("projects");
                                     section?.scrollIntoView({ behavior: 'smooth' });
@@ -96,7 +99,9 @@ const AboutSection = () => {
                                 View Projects
                             </a>
                             <a
-                                className="flex items-center gap-2 px-2 py-1 bg-yellow-400 text-xs hover:bg-yellow-500 text-gray-900 font-bold rounded-lg transition-all shadow-lg hover:shadow-yellow-400/20 md:text-lg md:px-6"
+                                className="flex items-center gap-2 px-2 py-1 bg-yellow-400 text-xs text-gray-900 font-bold 
+                                    rounded-lg shadow-lg hover:bg-yellow-500 hover:shadow-yellow-400/20 md:text-lg md:px-6
+                                    transition-all duration-300 hover:scale-105"
                                 href="/JohnDufresneResume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -108,9 +113,11 @@ const AboutSection = () => {
                                 href="https://github.com/jdufresne12"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-2 py-2 bg-white text-black text-xs font-semibold rounded-lg hover:bg-gray-200 transition-all md:text-lg md:px-6"
+                                className="flex items-center gap-2 px-2 py-2 bg-white text-black text-xs font-semibold 
+                                    rounded-lg transition-all duration-300 hover:scale-105 hover:bg-gray-200 md:text-lg md:px-4"
                             >
-                                <Github size={18} />
+                                <FaGithub size={25} className='hidden md:block' />
+                                <FaGithub size={20} className='block md:hidden' />
                                 GitHub
                             </Link>
 
@@ -118,9 +125,11 @@ const AboutSection = () => {
                                 href="https://www.linkedin.com/in/john-dufresne-abb631264/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-2 py-2 bg-blue-600 text-white text-xs font-semibold rounded-lg hover:bg-blue-700 transition-all md:text-lg md:px-6"
+                                className="flex items-center gap-2 px-2 py-2 bg-white text-[#0077B5] text-xs font-semibold 
+                                    rounded-lg transition-all duration-300 hover:scale-105 hover:bg-gray-200 md:text-lg md:px-4"
                             >
-                                <Linkedin size={18} />
+                                <FaLinkedin size={25} color={"#0077B5"} className='hidden md:block' />
+                                <FaLinkedin size={20} color={"#0077B5"} className='block md:hidden' />
                                 LinkedIn
                             </Link>
                         </motion.div>

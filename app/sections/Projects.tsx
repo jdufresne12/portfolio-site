@@ -2,44 +2,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from "../components/ProjectCard";
-
-export interface ProjectInfo {
-    id: number;
-    name: string;
-    description: string;
-    technologies: string[];
-    images: string;
-    github?: string;
-    link?: string;
-}
+import { projects, ProjectInfo } from '../data/projectData';
 
 export default function Projects() {
-    const projects: ProjectInfo[] = [
-        {
-            id: 1,
-            name: "Army Reserve Mercury",
-            description: "A Web and Mobile application dedicated to making the daily lives of Army Reservists easier, by handling tedious administrative tasks digitally and providing a dashboard for these administrative tasks and upcoming events.",
-            technologies: ["React", "React Native", "Javascript", "Python", "Jenkins", "AWS", "Jest", "PostgreSQL"],
-            images: "/MercuryLogin.png",
-        },
-        {
-            id: 2,
-            name: "Budget Buddy",
-            description: "A mobile personal finance application. Features customizable budget sections and items that track individual transactions, enabling users to gain meaningful insights into their spending habits.",
-            technologies: ["React Native", "Typescript", "Python", "FastAPI", "PostgreSQL", "JWT"],
-            images: "/BudgetBuddy.png",
-            github: "https://github.com/jdufresne12/BudgetBuddy",
-        },
-        {
-            id: 3,
-            name: "Parallel Sudoku Solver",
-            description: "A Java-based application that leverages parallel processing to solve Sudoku puzzles more efficiently using the ForkJoinPool framework and concurrent programming principles ",
-            technologies: ["Java"],
-            images: "/ParallelSudoku.png",
-            github: "https://github.com/abzium/parallel-sudoku"
-        },
-    ]
-
     return (
         <section id="projects" className="w-full flex flex-col items-center mt-10 md:mt-20">
             <motion.div
@@ -62,6 +27,5 @@ export default function Projects() {
                 </div>
             </motion.div>
         </section>
-
     )
 }

@@ -1,5 +1,5 @@
 import { FaGithub, FaLink } from "react-icons/fa";
-import { ProjectInfo } from "../sections/Projects"
+import { ProjectInfo } from "../data/projectData"
 import Image from "next/image";
 
 interface props {

@@ -75,7 +75,7 @@ export default function MySkills() {
                     </div>
                     <SkillsCarousel skillSet={languages} title="Languages" />
                     <SkillsCarousel skillSet={frameworks_libraries} title="Frameworks and Libraries" />
-                    <SkillsCarousel skillSet={devops_tools} title="Dev Ops and tools" />
+                    <SkillsCarousel skillSet={devops_tools} title="Dev Ops and Tools" />
                 </motion.div >
             </div>
         </section >

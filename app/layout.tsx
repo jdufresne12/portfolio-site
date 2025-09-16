@@ -23,11 +23,11 @@ const vt323 = VT323({
 
 export const metadata: Metadata = {
   title: "John Dufresne - My Developer Portfolio",
-  description: "Full Stack Developer portfolio showcasing projects and skills",
+  description: "Full Stack Developer portfolio showcasing projects and skills"
 };
 
 export const viewport = {
-  themeColor: "#000000",
+  themeColor: 'oklch(27.8% 0.033 256.848)',
 };
 
 export default function RootLayout({

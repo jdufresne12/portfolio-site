@@ -12,7 +12,7 @@ export default function HeroSection() {
             {/* Hero background image */}
             <div className="absolute inset-0">
                 <Image
-                    src="/heroImage.jpg"
+                    src="/main-image.jpg"
                     alt="John Dufresne - Hero Image"
                     fill
                     className="object-cover object-[center_35%] opacity-25"

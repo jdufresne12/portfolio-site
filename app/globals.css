@@ -18,3 +18,15 @@ body {
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 
+/* globals.css */
+.scrollbar-hide {
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE & Edge */
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}

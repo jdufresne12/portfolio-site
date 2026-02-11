@@ -108,10 +108,12 @@ export default function ProjectCard({ project }: Props) {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-700 flex-grow">{project.description}</p>
+                <div className="h-50 overflow-y-auto scrollbar-hide">
+                    <p className="text-gray-700 mt-2">{project.description}</p>
+                </div>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="flex flex-wrap gap-2 mt-auto pt-4">
                     {project.technologies.map((tech) => (
                         <span
                             key={tech}

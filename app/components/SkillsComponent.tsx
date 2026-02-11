@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { SkillObject } from "../sections/Skills";
+import { SkillObject } from "../data/skillsData";
 import CircleProgress from "./CircleProgress";
 
 interface SkillsCarouselProps {

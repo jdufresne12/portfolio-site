@@ -23,7 +23,7 @@ export default function Projects() {
                 <div className="grid grid-cols-1 pt-3 gap-8 md:grid-cols-2 md:pt-10">
                     {projects.map((project: ProjectInfo) => (
                         <ProjectCard key={project.id} project={project} />
-                    ))}
+                    )).reverse()}
                 </div>
             </motion.div>
         </section>

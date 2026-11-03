@@ -11,14 +11,16 @@ export const experience: Experience[] = [
     company: "Letheia",
     type: "Part-time",
     start: "2025-12",
-    summary: "Building the customizable companion character at the heart of Letheia's iOS wellness app.",
+    summary:
+      "Building the character animation platform and AI safety systems behind Letheia's wellness app, from the backend and tooling to the client.",
     highlights: [
-      "Architected a data-driven, component-based character system in SpriteKit and JSON that supports multiple characters, stages and visual variations.",
-      "Designed a modular Companion Rig that assembles bodies, eyes, pupils and overlays from attachment points instead of hard-coded positions.",
-      "Refactored an early MVP into separate models, stores, nodes and scene logic, making it far easier to extend and debug.",
-      "Implemented runtime config resolution, stage-based visual progression and a rendering pipeline with layering, z-ordering, runtime asset loading and animation hooks.",
+      "Designing and building an evidence-gated de-escalation engine for a safety-focused AI platform, with a statistically governed path for severity to decrease based on reviewer agreement and calibration thresholds. Co-inventor on a pending patent.",
+      "Built a Rive-style browser editor with a live canvas and keyframe timeline, so static artwork can be rigged and animated without code changes.",
+      "Built a cross-platform keyframe animation engine with layering, blending and easing, verified against a JavaScript port with 132 shared test fixtures for Android parity.",
+      "Extended the Swift Vapor and PostgreSQL backend with schema migrations, a publish/revert workflow, and admin APIs that validate rig hierarchies and animation clips.",
+      "Architected a data-driven SpriteKit character system with a hierarchical rig (parent/child joints, pivot anchors), so characters can evolve across stages and wear accessories without hard-coded positions.",
     ],
-    stack: ["Swift", "SpriteKit", "SwiftUI", "Swift Vapor", "PostgreSQL"],
+    stack: ["Swift", "SpriteKit", "JavaScript", "Swift Vapor", "PostgreSQL"],
     link: "https://letheia.app/",
   },
   {

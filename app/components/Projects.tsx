@@ -38,9 +38,8 @@ function Featured({ project, flip }: { project: Project; flip: boolean }) {
             alt={`${project.name} screenshot`}
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
-            className={`transition-transform duration-500 group-hover:scale-[1.03] ${
-              project.imageFit === "contain" ? "object-contain p-6" : "object-cover object-top"
-            }`}
+            className={`transition-transform duration-500 group-hover:scale-[1.03] ${project.imageFit === "contain" ? "object-contain p-6" : "object-cover object-top"
+              }`}
           />
         </div>
         {project.images.length > 1 && (
@@ -89,9 +88,8 @@ function Tile({ project }: { project: Project }) {
           alt=""
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className={`transition-transform duration-500 group-hover:scale-[1.03] ${
-            project.imageFit === "contain" ? "object-contain p-4" : "object-cover object-top"
-          }`}
+          className={`transition-transform duration-500 group-hover:scale-[1.03] ${project.imageFit === "contain" ? "object-contain p-4" : "object-cover object-top"
+            }`}
         />
       </div>
       <div className="flex flex-1 flex-col p-5">
@@ -140,7 +138,7 @@ export default function Projects() {
 
         {rest.length > 0 && (
           <>
-            <h3 className="wide mt-28 text-2xl font-bold md:text-3xl">More projects</h3>
+            <h3 className="wide mt-28 font-bold text-3xl">More Projects</h3>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {rest.map((p) => (
                 <Tile key={p.slug} project={p} />

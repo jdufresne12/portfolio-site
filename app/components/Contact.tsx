@@ -14,12 +14,12 @@ export default function Contact() {
 
         <a
           href={`mailto:${site.email}`}
-          className="display mt-10 inline-block break-all text-[clamp(1.6rem,5.2vw,4rem)] text-gold underline decoration-gold/40 decoration-2 underline-offset-[0.18em] transition-colors hover:decoration-gold"
+          className="display mt-5 md:mt-10 inline-block break-all text-[clamp(1.3rem,5.2vw,4.5rem)] md:text-[clamp(1.6rem,5.2vw,4rem)] text-gold underline decoration-gold/40 decoration-2 underline-offset-[0.19em] transition-colors hover:decoration-gold"
         >
           {site.email}
         </a>
 
-        <div className="mt-12 flex flex-col gap-8 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-5 md:mt-12 flex flex-col gap-8 border-t border-line pt-4 md:pt-8 sm:flex-row sm:items-center sm:justify-between">
           <dl className="flex flex-col gap-4 sm:flex-row sm:gap-12">
             <div>
               <dt className="text-sm text-dim">Based in</dt>

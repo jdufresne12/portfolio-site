@@ -4,9 +4,9 @@ export const site = {
   name: "John Dufresne",
   title: "Full stack developer",
   tagline:
-    "I build web and mobile apps end to end, from the database schema to the last pixel, and I care most about the part people actually touch.",
+    "I build web and mobile apps end to end, from the database schema to the last pixel.",
   /** Shown under the hero buttons. Set to null to hide. */
-  now: { label: "Software engineer at Letheia", detail: "building its in-app companion character system" } as
+  now: { label: "Software engineer at Letheia", detail: "building its character animation platform and AI safety systems" } as
     | { label: string; detail: string }
     | null,
   location: "Hopewell Junction, New York",
@@ -26,8 +26,8 @@ export const site = {
   },
   about: [
     "I'm a frontend-focused full stack developer with a Computer Science degree from the University of Central Florida. Most of my work lives in React, Next.js and React Native, but I'm just as comfortable designing the Postgres schema, writing the API and wiring up the deploy pipeline behind it.",
-    "I like turning messy, manual workflows into tools people actually want to open, like the shop management system I built for an automotive garage, or the admin portal that replaced hand-edited sponsor content for Axis. Lately I've been working in Swift and SpriteKit, building the character system for Letheia, which scratches the same itch as game development.",
-    "Outside of work I'm a car enthusiast and I tinker with game development.",
+    "I like turning messy, manual workflows into tools people actually want to open, like the shop management system I built for an automotive garage, or the admin portal that replaced hand-edited sponsor content for Axis.",
+    "Outside of work, I'm usually tinkering around with cars, playing golf, or finding any excuse to be outdoors.",
   ],
 } as const;
 
@@ -52,9 +52,9 @@ export const capabilities: Capability[] = [
     proof: ["army-reserve-mercury"],
   },
   {
-    title: "Interactive & game systems",
-    body: "Data-driven character rigs, layered rendering pipelines and runtime asset loading in SpriteKit, the kind of systems games are built on.",
-    tools: ["Swift", "SpriteKit", "SwiftUI"],
+    title: "Whatever the project needs",
+    body: "New language, unfamiliar codebase, a problem I've never seen before: I ramp up fast. At Letheia I started in Swift and went on to build a browser-based editor and backend APIs, and to co-invent a patent-pending AI safety engine.",
+    tools: ["Swift", "Swift Vapor", "JavaScript"],
     proof: ["letheia"],
   },
 ];

@@ -72,13 +72,18 @@ export const projects: Project[] = [
   {
     slug: "letheia",
     name: "Letheia",
-    kind: "iOS app",
+    kind: "Mobile app",
     date: "2025-12",
     summary:
-      "An emotional wellness app for Gen Z covering mood tracking, journaling, and AI mood reflections in a private, pressure-free space.",
+      "An emotional wellness app for Gen Z. I build its animated companion characters, the tools to create them, and the safety layer in front of its AI.",
     description:
-      "Letheia is an emotional wellness platform that helps Gen Z users track moods, journal, and receive AI-powered mood reflections, breathwork guidance and affirmations in a private, pressure-free space.\n\nInspired by the Greek spirit of truth and disclosure, it's built for a generation looking for emotional understanding and real self-support, not social validation. I work on the in-app companion character system and the safety layer in front of the AI chat.",
-    technologies: ["Swift", "SwiftUI", "SpriteKit", "Swift Vapor", "PostgreSQL"],
+      "Letheia is an emotional wellness platform that helps Gen Z users track moods, journal, and receive AI-powered mood reflections, breathwork guidance and affirmations in a private, pressure-free space.\n\nI work across the stack. On the character side, I built the hierarchical rig and a cross-platform keyframe animation engine, with a JavaScript port kept in lockstep through 132 shared test fixtures. I also built a browser-based editor where static artwork can be rigged and animated without code changes, plus the Swift Vapor and PostgreSQL APIs that validate and publish their work.\n\nI'm also designing an evidence-gated de-escalation engine for the platform's AI safety layer, which lets severity decrease only when reviewer agreement and calibration thresholds support it. I'm a co-inventor on the pending patent.",
+    highlights: [
+      "Co-inventor on a pending patent for the AI safety de-escalation engine",
+      "Browser-based rigging and animation editor with a live canvas and keyframe timeline",
+      "Animation engine parity across platforms, verified by 132 shared test fixtures",
+    ],
+    technologies: ["Swift", "SpriteKit", "JavaScript", "Swift Vapor", "PostgreSQL"],
     images: ["/Letheia/LetheiaCover.png"],
     imageFit: "contain",
     link: "https://letheia.app/",

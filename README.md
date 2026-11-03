@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# John Dufresne · Portfolio (v2)
 
-## Getting Started
-
-First, run the development server:
+Next.js 15 + React 19 + Tailwind CSS 4 + three.js.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All content lives in `content/`. You should never need to touch a component to add something.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| File | What's in it |
+| --- | --- |
+| `content/site.ts` | Name, tagline, "Now" line, contact info, about paragraphs, the "What I can build for you" capabilities |
+| `content/experience.ts` | Jobs/roles (timeline) |
+| `content/projects.ts` | Projects (featured panels + tiles + detail dialog) |
+| `content/skills.ts` | Tools shown in the Stack section |
 
-## Learn More
+Lists are sorted automatically (newest first), so order in the file doesn't matter.
 
-To learn more about Next.js, take a look at the following resources:
+### Add a job
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copy an entry in `content/experience.ts`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```ts
+{
+  id: "acme",                       // unique
+  role: "Software Engineer",
+  company: "Acme",
+  type: "Full-time",                // optional
+  start: "2026-11",                 // YYYY-MM
+  // end: "2027-06",                // leave out while it's your current role → shows "Present" + gold pad
+  summary: "One sentence a recruiter can skim.",
+  highlights: ["What you did, with numbers if you have them."],
+  stack: ["Next.js", "PostgreSQL"], // names that match skills.ts get linked in the Stack section
+  link: "https://acme.com",         // optional
+},
+```
 
-## Deploy on Vercel
+When a job changes, also update `site.now` in `content/site.ts` (or set it to `null`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Add a project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Put screenshots in `public/YourProject/` (3:2 images look best, ~1080×720).
+2. Copy an entry in `content/projects.ts`. The first image is the cover.
+3. Set `featured: true` for a big alternating panel; leave it off for a tile under "More projects".
+4. Use `imageFit: "contain"` for images that shouldn't be cropped (e.g. phone mockups).
+
+Every project gets a shareable deep link: `https://your-site/#project/<slug>`.
+
+### Add a tool
+
+Add one line to `content/skills.ts`. Icons come from [react-icons](https://react-icons.github.io/react-icons/), e.g. `SiRust` from `react-icons/si`.
+The Stack section automatically counts and lists every project and role whose `technologies`/`stack` mention that tool. `"AWS S3"` counts toward `AWS`, and you can add `aliases` for other spellings.
+
+### Resume
+
+Replace `public/JohnDufresneResume.pdf` (keep the name, or update `resume` in `site.ts`).
+
+## How the hero works
+
+`app/components/hero/circuitScene.ts` procedurally routes a circuit board (45° traces, vias, SMD parts) around the JD chip and animates gold signals along the traces with a small shader. Moving the cursor lights up nearby copper.
+
+- Loaded client-side only, in its own chunk, so it doesn't block first paint.
+- Pauses when scrolled off-screen or when the tab is hidden.
+- `prefers-reduced-motion` gets a single still frame.
+- No WebGL support falls back to the plain board-colored background.
+
+Tweak the look in the `COLORS` object at the top of that file. Change the seed in `buildTraces(1207, …)` to get a different board layout.
+
+## Design tokens
+
+Defined in `app/globals.css` (`@theme`): `board`, `raised`, `trace`, `gold`, `gold-dim`, `silk`, `dim`, `line`. Use them as Tailwind classes (`bg-board`, `text-gold`, …).
+The font is Archivo (variable width + weight), self-hosted in `app/fonts/` under the SIL Open Font License.

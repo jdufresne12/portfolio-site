@@ -1,49 +1,36 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, VT323 } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { site } from "@/content/site";
 
-// Import fonts
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
+// Archivo variable (weight 100–900, width 62–125), self-hosted. SIL Open Font License, see ./fonts/OFL.txt
+const archivo = localFont({
+  src: "./fonts/archivo-variable.woff2",
+  weight: "100 900",
+  style: "normal",
+  variable: "--font-archivo",
+  display: "swap",
+  declarations: [{ prop: "font-stretch", value: "62% 125%" }],
 });
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
-
-const vt323 = VT323({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-vt323',
-})
 
 export const metadata: Metadata = {
-  title: "John Dufresne - My Developer Portfolio",
-  description: "Full Stack Developer portfolio showcasing projects and skills"
+  title: `${site.name} | ${site.title}`,
+  description: site.tagline,
+  openGraph: {
+    title: `${site.name} | ${site.title}`,
+    description: site.tagline,
+    type: "website",
+  },
 };
 
-export const viewport = {
-  themeColor: 'oklch(27.8% 0.033 256.848)',
+export const viewport: Viewport = {
+  themeColor: "#0e1a3d",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable}`}>
-      <body className="antialiased flex flex-col min-h-screen bg-gradient-to-r from-gray-800 to-gray-900">
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-      </body>
+    <html lang="en" className={archivo.variable}>
+      <body className="min-h-screen">{children}</body>
     </html>
   );
 }
